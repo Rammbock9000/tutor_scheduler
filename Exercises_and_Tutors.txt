@@ -1,0 +1,100 @@
+# specify solver setup
+# one line consists of
+#   (1) the keyword
+#       "Timeout" or "Threads" or "NumExercises" or
+#       to set a solving timeout or the number of threads
+#   (2) the value
+# Timeout: timeout in seconds for the solver
+# Threads: number of threads to use for solving
+# Exercises: choose the best n exercises out of the ones that are specified below
+#   -> e.g., specify 20 exercises and set "Exercises 13" to choose the best 13 exercises out of the 20 specified ones
+Timeout 60
+Threads 1
+Exercises 13
+
+# specify exercises
+# one line consists of
+#   (1) the keyword "Exercise",
+#   (2) the day (e.g., "Monday")
+#   (3) and the start time (e.g., 10 for "10:00 am")
+#   (4) the max. number of tutors that can be assigned to this exercise
+#       (e.g., when 2 exercises can be held simultaneously)
+Exercise Monday 10 2
+Exercise Monday 11 2
+Exercise Tuesday 10 2
+Exercise Tuesday 14 2
+Exercise Tuesday 15 2
+Exercise Tuesday 16 2
+Exercise Thursday 10 2
+Exercise Thursday 12 2
+Exercise Thursday 13 2
+Exercise Thursday 16 2
+
+# specify tutors
+# one line consists of
+#   (1) the keyword "Tutor",
+#   (2) the tutor's name,
+#   (3) the maximum number of groups he/she wants to do
+#   (4) and a weighting factor for that tutor (e.g. 3)
+# (default for all tutors is 1.0 which weighs all tutors equally)
+# this might be useful when PhD candidates also do exercises
+# so we can force the solver to try to respect their preferences a bit more than those of HiWis
+Tutor Lukas 2 1.0
+Tutor Kay 4 1.0
+Tutor Leonard 2 1.0
+Tutor Patrick 1 1.0
+Tutor Emil 2 1.0
+Tutor Jonathan 2 1.0
+
+# specify tutor preferences
+# one line consists of
+#   (1) the keyword "Preference",
+#   (2) the tutor's name (e.g. "Nicolai"),
+#   (3) a day (e.g., "Monday"),
+#   (4) the time (e.g. 10),
+#   (5) and the tutor's priority for the given exercise (e.g., 1 for low priority or 2 for high priority)
+Preference Lukas Monday 10 2
+Preference Lukas Monday 11 2
+Preference Lukas Tuesday 10 1
+Preference Lukas Thursday 12 2
+Preference Lukas Thursday 13 2
+
+Preference Kay Monday 10 2
+Preference Kay Monday 11 1
+Preference Kay Tuesday 14 2
+Preference Kay Tuesday 15 2
+Preference Kay Tuesday 16 2
+Preference Kay Thursday 10 1
+Preference Kay Thursday 12 2
+Preference Kay Thursday 13 2
+Preference Kay Thursday 16 1
+
+Preference Leonard Tuesday 10 2
+Preference Leonard Tuesday 14 2
+Preference Leonard Thursday 13 2
+Preference Leonard Thursday 16 2
+
+Preference Patrick Monday 10 2
+Preference Patrick Monday 11 2
+Preference Patrick Tuesday 10 2
+Preference Patrick Tuesday 14 2
+Preference Patrick Tuesday 15 2
+Preference Patrick Tuesday 16 2
+Preference Patrick Thursday 10 2
+Preference Patrick Thursday 12 2
+Preference Patrick Thursday 13 2
+Preference Patrick Thursday 16 2
+
+Preference Emil Monday 10 2
+Preference Emil Monday 11 1
+Preference Emil Tuesday 10 1
+Preference Emil Tuesday 14 1
+Preference Emil Tuesday 15 1
+Preference Emil Tuesday 16 1
+Preference Emil Thursday 10 2
+
+Preference Jonathan Tuesday 14 2
+Preference Jonathan Tuesday 15 2
+Preference Jonathan Tuesday 16 2
+Preference Jonathan Thursday 10 1
+Preference Jonathan Thursday 16 2
